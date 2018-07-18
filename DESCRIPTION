@@ -1,0 +1,18 @@
+Package: TreatyDiffusion
+Type: Package
+Title: Application of Temporal Exponential Random Graph Model (TERGM) and Network Inference model to the UN treaties diffusion process
+Version: 0.1.0
+Author: Zhanna Terechshenko and Ki Eun Ryu
+Maintainer: Zhanna Terechshenko <zhanna.terechshenko@gmail.com>
+Description: Provides functions needed for the analysis from the project on UN treaties diffusion
+License: GPL2
+Encoding: UTF-8
+LazyData: true
+Imports: dplyr, 
+         NetworkInference, 
+         network,
+         ergm, 
+         btergm,
+    tergm,
+    networkinference
+RoxygenNote: 6.0.1
