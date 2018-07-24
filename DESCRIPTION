@@ -9,10 +9,9 @@ License: GPL2
 Encoding: UTF-8
 LazyData: true
 Imports: dplyr, 
-         NetworkInference, 
          network,
          ergm, 
          btergm,
     tergm,
-    networkinference
+    NetworkInference
 RoxygenNote: 6.0.1
