@@ -23,44 +23,46 @@ tergm_1975 <-function(ivs75, edgelist){
 
     nv <- nrow(dataYr)
 
-    net75[[yr]] <- network.initialize(nv)
+    net75[[yr]] <- network::network.initialize(nv)
 
-    network.vertex.names(x=net75[[yr]]) <- dataYr$cname
+    network::network.vertex.names(x=net75[[yr]]) <- as.character(dataYr$cname)
 
     net75[[yr]][as.matrix(elYr)] <- 1
 
     #Apply nodal attributes
-    set.vertex.attribute(x=net75[[yr]],attrname="major",value=dataYr$major)
-    set.vertex.attribute(x=net75[[yr]],attrname="democracy",val=dataYr$democ)
-    set.vertex.attribute(x=net75[[yr]],attrname="cinc",value=dataYr$cinc)
-    set.vertex.attribute(x=net75[[yr]],attrname="totalpop",value=dataYr$tpop)
-    set.vertex.attribute(x=net75[[yr]],attrname="urbanpop",value=dataYr$upop)
-    set.vertex.attribute(x=net75[[yr]],attrname="region",value=dataYr$region)
+    network::set.vertex.attribute(x=net75[[yr]],attrname="major",value=dataYr$major)
+    network::set.vertex.attribute(x=net75[[yr]],attrname="democracy",val=dataYr$democ)
+    network::set.vertex.attribute(x=net75[[yr]],attrname="cinc",value=dataYr$cinc)
+    network::set.vertex.attribute(x=net75[[yr]],attrname="totalpop",value=dataYr$tpop)
+    network::set.vertex.attribute(x=net75[[yr]],attrname="urbanpop",value=dataYr$upop)
+    network::set.vertex.attribute(x=net75[[yr]],attrname="region",value=as.character(dataYr$region))
 
     #Apply edge attributes
 
-    set.network.attribute(x=net75[[yr]], attrname="distance", value=as.matrix(distance75))
-    set.network.attribute(x=net75[[yr]], attrname="trade", value=as.matrix(tradelist75[[yr]]))
+    network::set.network.attribute(x=net75[[yr]], attrname="distance", value=as.matrix(distance75))
+    network::set.network.attribute(x=net75[[yr]], attrname="trade", value=as.matrix(tradelist75[[yr]]))
+
+
   }
 
   ## btergm models
 
-  est1 <- btergm(net75~ edges+
+  est1 <- btergm::btergm(net75~ edges+
                    mutual +transitive+nodeocov("major")+ nodeocov("totalpop")+nodeocov("urbanpop")+nodematch("region")+edgecov("trade")+edgecov("distance")
                  , R=100)
-  est2 <- btergm(net75~ edges+
+  est2 <- btergm::btergm(net75~ edges+
                    mutual +nodematch("democracy")+nodeocov("democracy")+nodeocov("major")+ nodeocov("totalpop")+nodeocov("urbanpop")+nodematch("region")+edgecov("trade")+edgecov("distance")
                  , R=100)
-  est3 <- btergm(net75~ edges+
+  est3 <- btergm::btergm(net75~ edges+
                    mutual +transitive+nodematch("democracy")+nodeocov("democracy")+nodeocov("major")+ nodeocov("totalpop")+nodeocov("urbanpop")+nodematch("region")+edgecov("trade")+edgecov("distance")
                  , R=100)
-  est4 <- btergm(net75~ edges+
+  est4 <- btergm::btergm(net75~ edges+
                    mutual +transitive+nodematch("democracy")+nodeocov("democracy")+absdiff("cinc")+ nodeocov("totalpop")+nodeocov("urbanpop")+nodematch("region")+edgecov("trade")+edgecov("distance")
                  , R=100)
-
-  return(est1, est2, est3, est4)
+  results<-list(est1, est2, est3, est4)
+  #return(est1, est2, est3, est4)
+  return(results)
 }
-
 
 
 
