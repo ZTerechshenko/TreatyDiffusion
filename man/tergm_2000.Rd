@@ -2,7 +2,7 @@
 % Please edit documentation in R/tergm_2000.R
 \name{tergm_2000}
 \alias{tergm_2000}
-\title{A Function to run TERGM for the post-Cold War years}
+\title{A Function to run TERGM for for 2000-2012 years}
 \usage{
 tergm_2000(ivs00, edgelist)
 }
