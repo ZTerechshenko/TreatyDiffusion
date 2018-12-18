@@ -1,34 +1,35 @@
 # TreatyDiffusion
 
 This package allows to load the data and run the analysis from 
-"The Structure of International Treaty Diffusion"
+"The Structure of International Treaty Diffusion" <br />
 
 In order to install, run:
-install_github("ZTerechshenko/TreatyDiffusion")
+install_github("ZTerechshenko/TreatyDiffusion") <br />
 
-The package has lots of dependencies (dplyr, network, ergm, btergm, tergm, NetworkInference)
+The package has lots of dependencies (dplyr, network, ergm, btergm, tergm, NetworkInference) <br />
 	
 If you already have them and do not want them to be installed, please, run:
-install_github("ZTerechshenko/TreatyDiffusion", dependencies = FALSE)
+install_github("ZTerechshenko/TreatyDiffusion", dependencies = FALSE) <br />
 
-The package contains the following 
-datasets:
+The package contains the following <br />
+datasets:<br />
 
-distance00.rda -  contains distance between capitals for 2000-2012 years 
-distance75.rda -  contains distance between capitals for 1975-1989 years
-edgelist.rda - contains edgelist
-IVs00.rda - contains independent variables for 2000-2012 years
-IVs75.rda - contains independent variables for 1975-1989 years
+
+distance00.rda -  contains distance between capitals for 2000-2012 years <br />
+distance75.rda -  contains distance between capitals for 1975-1989 years <br />
+edgelist.rda - contains edgelist <br />
+IVs00.rda - contains independent variables for 2000-2012 years <br />
+IVs75.rda - contains independent variables for 1975-1989 years <br />
 tradelist00.rda - data on trade flows between states (as defined by the Correlates of War
-				 project) for the period 2000-2012 years
+				 project) for the period 2000-2012 years <br />
 tradelist75.rda - data on trade flows between states (as defined by the Correlates of War
-				 project) for the period 1975-1989 years
+				 project) for the period 1975-1989 years <br />
 
 
 
-functions:
+functions: <br />
 
 netinf_dynamic.R - A function to create estimates for network inference for each year
-				 (25 year window)
-tergm_1975.R - A function to run TERGM for 1975-1989 years
-tergm_2000.R - A Function to run TERGM for 2000-2012 years 
+				 (25 year window) <br />
+tergm_1975.R - A function to run TERGM for 1975-1989 years <br />
+tergm_2000.R - A Function to run TERGM for 2000-2012 years <br />
