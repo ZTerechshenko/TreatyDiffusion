@@ -3,12 +3,16 @@
 This package allows to load the data and run the analysis from 
 "The Structure of International Treaty Diffusion" <br />
 
-In order to install, run:
+In order to install, run: <br />
+
+`library(devtools)` <br />
 `install_github("ZTerechshenko/TreatyDiffusion")` <br />
 
 The package has lots of dependencies (dplyr, network, ergm, btergm, tergm, NetworkInference) <br />
 	
-If you already have them and do not want them to be installed, please, run:
+If you already have them and do not want them to be installed, please, run: <br />
+
+`library(devtools)` <br />
 `install_github("ZTerechshenko/TreatyDiffusion", dependencies = FALSE)` <br />
 
 The package contains the following <br />
