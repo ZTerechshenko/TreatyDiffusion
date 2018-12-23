@@ -22,7 +22,7 @@ netinf_dynamic <- function(data, edges=NULL, window=NULL,
     endYear = 2017
   }
   #Convert to Cascade Object
-  treaty_cascades <- as_cascade_long(data,
+  treaty_cascades <- NetworkInference::as_cascade_long(data,
                                      cascade_node_name="cname",
                                      event_time="sign_year2",
                                      cascade_id="title")
@@ -36,10 +36,10 @@ netinf_dynamic <- function(data, edges=NULL, window=NULL,
     treaty_cascades <- data %>%
       filter(sign_year2 >= startYear &
                sign_year2 <= startYear + window) %>%
-      as_cascade_long(cascade_node_name="cname",
+      NetworkInference::as_cascade_long(cascade_node_name="cname",
                       event_time="sign_year2",
                       cascade_id="title")
-    treatyDataSubsetNetworkAll <- netinf(treaty_cascades,
+    treatyDataSubsetNetworkAll <- NetworkInference::netinf(treaty_cascades,
                                          p_value_cutoff = edges)
     estNetDynamicAll <- treatyDataSubsetNetworkAll %>%
       transmute(state_01 = origin_node,

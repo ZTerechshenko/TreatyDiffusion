@@ -2,15 +2,16 @@
 % Please edit documentation in R/tergm_1975.R
 \name{tergm_1975}
 \alias{tergm_1975}
-\title{A function to run TERGM for 1975-1989 years}
+\title{A Function to run TERGM for the Cold War years}
 \usage{
-tergm_1975(ivs75, edgelist)
+tergm_1975(ivs75, edgelist, distance75, tradelist75)
 }
 \arguments{
-\item{data.frame}{Final dataset used in the project}
+\item{data.frame}{with independent variables for 1975-1989 years,
+data.frame with netinf estimates, two dataframes with distance and trade estimates}
 }
 \value{
-data.frame with independent variables for 1975-1989 years, data.frame with netinf estimates
+list
 }
 \description{
 A Function to run TERGM for the Cold War years

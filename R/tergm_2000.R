@@ -1,10 +1,11 @@
 #' A Function to run TERGM for the post-Cold War years
 #'
-#' @param data.frame Final dataset used in the project
-#' @return data.frame with independent variables for 2000-2012 years, data.frame with netinf estimates
+#' @param data.frame with independent variables for 2000-2012 years,
+#' data.frame with netinf estimates, two dataframes with distance and trade estimates
+#' @return list
 #' @export
 #'
-tergm_2000 <-function(ivs00, edgelist){
+tergm_2000 <-function(ivs00, edgelist, distance00, tradelist00){
   set.seed(11235)
   edgelist <- subset(edgelist, year>=2000&year<2013)
   # cname that exist in edgelist but not in ivs?

@@ -2,15 +2,16 @@
 % Please edit documentation in R/tergm_2000.R
 \name{tergm_2000}
 \alias{tergm_2000}
-\title{A Function to run TERGM for for 2000-2012 years}
+\title{A Function to run TERGM for the post-Cold War years}
 \usage{
-tergm_2000(ivs00, edgelist)
+tergm_2000(ivs00, edgelist, distance00, tradelist00)
 }
 \arguments{
-\item{data.frame}{Final dataset used in the project}
+\item{data.frame}{with independent variables for 2000-2012 years,
+data.frame with netinf estimates, two dataframes with distance and trade estimates}
 }
 \value{
-data.frame with independent variables for 2000-2012 years, data.frame with netinf estimates
+list
 }
 \description{
 A Function to run TERGM for the post-Cold War years

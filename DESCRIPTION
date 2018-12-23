@@ -17,3 +17,4 @@ Imports:
 	tergm,
 	NetworkInference
 RoxygenNote: 6.0.1
+Suggests: testthat

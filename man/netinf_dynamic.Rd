@@ -2,7 +2,7 @@
 % Please edit documentation in R/netinf_dynamic.R
 \name{netinf_dynamic}
 \alias{netinf_dynamic}
-\title{A function to create estimates for network inference for each year (25 year window)}
+\title{A Function to create estimates for network inference for each year (25 year window)}
 \usage{
 netinf_dynamic(data, edges = NULL, window = NULL, startYear = NULL,
   endYear = NULL)
